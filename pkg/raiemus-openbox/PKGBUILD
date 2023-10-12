@@ -6,6 +6,8 @@ source=("https://github.com/Raiemus/Packages/raw/main/pkg/$pkgname-$pkgver.tar.g
 pkgdesc="Openbox config for Raiemus"
 arch=('x86_64')
 md5sums=('SKIP')
+provides=("openbox")
+replaces=("openbox")
 
 package(){
     install -dm755 ${pkgdir}${_destname1}
