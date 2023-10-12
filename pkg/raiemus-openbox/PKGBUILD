@@ -1,0 +1,13 @@
+_destname1="/etc/xdg"
+pkgname=raiemus-openbox
+pkgver=0.5.0
+pkgrel=1
+source=("https://github.com/Raiemus/Packages/raw/main/pkg/$pkgname-$pkgver.tar.gz")
+pkgdesc="Openbox config for Raiemus"
+arch=('x86_64')
+md5sums=('SKIP')
+
+package(){
+    install -dm755 ${pkgdir}${_destname1}
+    cp -r ${srcdir}/${pkgname}${_destname1}/* ${pkgdir}${_destname1}
+}
