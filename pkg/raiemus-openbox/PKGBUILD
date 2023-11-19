@@ -1,5 +1,4 @@
-_destname1="/etc/xdg/openbox"
-_destname2="/etc/xdg/raiemus-openbox"
+_destname1="/etc"
 pkgname=raiemus-openbox
 pkgver=0.5.0
 pkgrel=1
@@ -7,11 +6,9 @@ source=("https://github.com/Raiemus/Packages/raw/main/pkg/$pkgname-$pkgver.tar.g
 pkgdesc="Openbox config for Raiemus"
 arch=('x86_64')
 md5sums=('SKIP')
-provides=("openbox")
-replaces=("openbox")
+makedepends=(openbox)
 
 package(){
     install -dm755 ${pkgdir}${_destname1}
-    cp -r ${srcdir}/${pkgname}${_destname2}/* ${pkgdir}${_destname1}
-    rm -rf ${_destname2}
+    cp -r ${srcdir}/${pkgname}${_destname1}/* ${pkgdir}${_destname1}
 }
